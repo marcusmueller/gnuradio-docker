@@ -97,6 +97,7 @@ RUN mkdir /tmp/sccache/ \
 # or set up a builder context, and that just seems to be more trouble than it's
 # worth, sooooo:
     && printf '[cache.s3]\n' > /etc/sccache/config \
+    && printf 'bucket = sccache\n' >> /etc/sccache/config \
     && printf 'use_ssl = true\n' >> /etc/sccache/config \
     && printf 'no_credentials = false\n' >> /etc/sccache/config \
     && printf 'server_side_encryption = false\n' >> /etc/sccache/config
